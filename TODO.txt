@@ -1,0 +1,3 @@
+TODO: make navbar
+TODO: config mongo DB
+TODO: login, register logic -> passport local strategy
