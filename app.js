@@ -5,7 +5,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-
+app.use(require("./middleware/autenticationCheck"));
 //routing
 app.use("/", require("./routes/home"));
 

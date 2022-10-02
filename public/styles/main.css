@@ -6,6 +6,102 @@
   word-wrap: break-word;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+.navigation {
+  display: flex;
+  height: 65px;
+  padding: 0 6em 0 6em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 8px 0 #cccccc;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.navigation .logo-wrapper {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.navigation .logo-wrapper .logo-link i {
+  color: #000000;
+  font-size: 1.4em;
+}
+.navigation .menu {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 50%;
+  list-style: none;
+}
+.navigation .menu .menu-item {
+  margin-right: 2em;
+}
+.navigation .menu .menu-item:last-child {
+  margin-right: 0;
+}
+.navigation .menu .menu-item .menu-link {
+  text-transform: capitalize;
+  color: #000000;
+  text-decoration: none;
+}
+.navigation .menu .menu-item .menu-link:hover {
+  color: #1363df;
+  transition: color 0.2s;
+}
+.navigation .menu .menu-item-user {
+  position: relative;
+}
+.navigation .menu .menu-item-user:hover .dropdown-menu {
+  display: flex;
+}
+.navigation .menu .menu-item-user .dropdown-menu {
+  position: absolute;
+  left: -25px;
+  list-style: none;
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 0.8em;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  display: none;
+}
+.navigation .menu .menu-item-user .dropdown-menu .dropdown-menu-item {
+  margin-top: 0.2em;
+}
+.navigation .menu .menu-item-user .dropdown-menu .dropdown-menu-item:first-child {
+  margin: 0;
+}
+.navigation .menu .menu-item-user .dropdown-menu .dropdown-menu-item .dropdown-menu-link {
+  white-space: nowrap;
+  font-size: 0.95em;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  height: 55px;
+  background-color: #000000;
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,34 @@
+<nav class="navigation">
+  <div class="logo-wrapper">
+    <a href="/" class="logo-link"><i class="fa-solid fa-camera"></i></a>
+  </div>
+  <ul class="menu">
+    <li class="menu-item"><a href="/" class="menu-link">blog</a></li>
+    <li class="menu-item"><a href="/about" class="menu-link">about</a></li>
+    <li class="menu-item"><a href="/contact" class="menu-link">contact</a></li>
+    <% if(authenticated){ %>
+      <li class="menu-item menu-item-user">
+        <a href="/user" class="menu-link"><i class="fa-solid fa-user"></i></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-menu-item">
+            <a href="/user" class="dropdown-menu-link">Profile</a>
+          </li>
+          <li class="dropdown-menu-item">
+            <a href="/user/logout" class="dropdown-menu-link">Log out</a>
+          </li>
+        </ul>
+      </li>
+    <% }else { %>
+      <li class="menu-item menu-item-user">
+        <a href="/user/login" class="menu-link">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-menu-item">
+            <a href="/user/login" class="dropdown-menu-link">Login</a>
+          </li>
+        </ul>
+      </li>
+    <% } %>
+  </ul>
+</nav>
