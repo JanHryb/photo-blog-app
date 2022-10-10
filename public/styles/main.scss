@@ -93,6 +93,18 @@ body {
     }
   }
 }
+.main {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  .header-wrapper {
+    .header {
+      text-align: center;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
 .footer {
   display: flex;
   justify-content: center;

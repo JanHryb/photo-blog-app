@@ -96,6 +96,17 @@ body {
   color: #ffffff;
 }
 
+.main {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.main .header-wrapper .header {
+  text-align: center;
+}
+.main .header-wrapper .header::first-letter {
+  text-transform: uppercase;
+}
+
 .footer {
   display: flex;
   justify-content: center;

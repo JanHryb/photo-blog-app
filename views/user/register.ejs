@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/headConfig') %>
+    <title>Blog · register</title>
+  </head>
+  <body>
+   <div class="container">
+    <%- include('../partials/navbar') %>
+    <main class="main">
+      <form action="/user/register" method="post" class="form">
+        <header class="header-wrapper">
+          <h2 class="header">register</h2>
+        </header>
+        <% if (messages.error) { %>
+        <div class="form-items-wrapper">
+          <p class="message-error"><%= messages.error %></p>
+        </div>
+        <% } %>
+        <div class="form-items-wrapper">
+          <label for="first_name" class="form-label">first name</label>
+          <input type="text" name="first_name" id="first_name" class="form-input" value="<%= typeof first_name != 'undefined' ? first_name : '' %>" required>
+        </div>
+        <div class="form-items-wrapper">
+          <label for="last_name" class="form-label">last name</label>
+          <input type="text" name="last_name" id="last_name" class="form-input" value="<%= typeof last_name != 'undefined' ? last_name : '' %>" required>
+        </div>
+        <div class="form-items-wrapper">
+          <label for="email" class="form-label">email</label>
+          <input type="email" name="email" id="email" class="form-input" value="<%= typeof email != 'undefined' ? email : '' %>" required>
+        </div>
+        <div class="form-items-wrapper">
+          <label for="password" class="form-label">password</label>
+          <input type="password" name="password" id="password" class="form-input" value="<%= typeof password != 'undefined' ? password : '' %>" required>
+        </div>
+        <div class="form-items-wrapper">
+          <label for="password_repeat" class="form-label">repeat password</label>
+          <input type="password" name="password_repeat" id="password_repeat" class="form-input" value="<%= typeof password_repeat != 'undefined' ? password_repeat : '' %>" required>
+        </div>
+        <div class="form-items-wrapper">
+          <button type="submit" class="form-button">Create account</button>
+        </div>
+        <div class="form-items-wrapper">
+          <p class="form-plain-text">
+            Already have an account?
+            <a class="form-link" href="/user/login">login</a>
+          </p>
+        </div>
+      </form>
+    </main>
+   </div>
+   <%- include('../partials/footer') %>
+   <%- include('../partials/scriptConfig') %>
+  </body>
+</html>

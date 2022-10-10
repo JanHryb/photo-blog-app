@@ -1,4 +1,6 @@
 DONE: make navbar
-TODO: config mongo DB
+DONE: config mongo DB
 TODO: login, register logic -> passport local strategy
+  1.make register page and route handling it
+  2.make login page and config passport local startegy
 TODO: upgrade footer
