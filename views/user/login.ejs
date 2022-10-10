@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <%- include('../partials/headConfig') %>
+    <link rel="stylesheet" href="/styles/form.css" />
     <title>Blog · login</title>
   </head>
   <body>
@@ -30,9 +31,9 @@
           <label for="password" class="form-label">password</label>
           <input type="password" name="password" id="password" class="form-input" required/>
         </div>
-        <div class="form-items-wrapper">
-          <input type="checkbox" name="rememberMe" id="rememberMe" class="form-input"/>
-          <label for="rememberMe" class="form-label">Remember me</label>
+        <div class="form-items-wrapper form-items-wrapper-checkbox">
+          <input type="checkbox" name="rememberMe" id="rememberMe" class="form-input form-input-checkbox"/>
+          <label for="rememberMe" class="form-label form-label-checkbox">Remember me</label>
         </div>
         <div class="form-items-wrapper">
           <button type="submit" class="form-button">Login</button>

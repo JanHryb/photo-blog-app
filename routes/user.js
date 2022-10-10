@@ -11,11 +11,11 @@ router.get("/", auth.authenticated, (req, res) => {
   return res.status(httpStatusCodes.OK).render("user/profile", req.user);
 });
 
-router.get("/login", (req, res) => {
+router.get("/login", auth.notAuthenticated, (req, res) => {
   return res.status(httpStatusCodes.OK).render("user/login");
 });
 
-router.get("/register", (req, res) => {
+router.get("/register", auth.notAuthenticated, (req, res) => {
   return res.status(httpStatusCodes.OK).render("user/register");
 });
 

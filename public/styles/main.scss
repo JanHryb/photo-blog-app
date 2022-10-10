@@ -96,6 +96,11 @@ body {
 .main {
   margin-top: 1em;
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   .header-wrapper {
     .header {
       text-align: center;
@@ -104,6 +109,14 @@ body {
       }
     }
   }
+}
+.message-error {
+  color: #d32626;
+  font-size: 0.9em;
+}
+.message-success {
+  color: #22be22;
+  font-size: 0.9em;
 }
 .footer {
   display: flex;
