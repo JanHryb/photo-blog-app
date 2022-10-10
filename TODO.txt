@@ -1,6 +1,5 @@
 DONE: make navbar
 DONE: config mongo DB
-TODO: login, register logic -> passport local strategy
-  1.make register page and route handling it
-  2.make login page and config passport local startegy
+DONE: login, register logic -> passport local strategy
+TODO: deployt app on heroku
 TODO: upgrade footer
