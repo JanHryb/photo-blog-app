@@ -11,9 +11,39 @@
       <header class="header-wrapper">
         <h1 class="header">welcome to photography blog</h1>
       </header>
+      <section class="posts-wrapper">
+        <% posts.forEach((post)=>{ %>
+        <article class="post">
+          <a href="/post/<%= post._id.toString() %>" class="post-image-link">
+            <img src="<%= post.image_url %>" alt="<%= post.title %>" class="post-image">
+          </a>
+          <div class="post-description-wrapper">
+            <div class="post-author-date-wrapper">
+              <h5><%= post.user_id.first_name %> <%= post.user_id.last_name %> | <%= post.createdAt.toLocaleDateString() %></h5>
+            </div>
+            <h3 class="post-title">
+              <a href="/post/<%= post._id.toString() %>" class="post-description-link"><%= post.title %></a>
+            </h3>
+            <p class="post-description"><%= post.description %></p>
+            <a href="/post/<%= post._id.toString() %>" class="post-read-more-link">read more <i class="fa-solid fa-caret-right"></i></a>
+          </div>
+        </article>
+        <% }) %> 
+      </section>
+      <form action="/" method="get" class="form-page" name="form-page" onsubmit="event.preventDefault()">
+        <% if(pageQueryParam > 1){ %>
+        <button type="submit" class="form-page-button-backward" onclick="backward('form-page')"><</button>
+        <% } %>
+        <input type="text" name="page" class="form-page-input" value="<%= pageQueryParam %>">
+        <p class="form-page-num">from <%= pagesNum %></p>
+        <% if(pageQueryParam != pagesNum){ %> 
+        <button type="submit" class="form-page-button-forward" onclick="forward('form-page')">></button>
+        <% } %> 
+      </form>
     </main>
    </div>
    <%- include('./partials/footer') %>
    <%- include('./partials/scriptConfig') %>
+   <script src="/scripts/pageForm.js"></script>
   </body>
 </html>

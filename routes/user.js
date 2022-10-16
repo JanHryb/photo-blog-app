@@ -7,8 +7,12 @@ const User = require("../models/User");
 const passport = require("passport");
 const auth = require("../config/auth");
 
-router.get("/", auth.authenticated, (req, res) => {
+router.get("/", auth.authenticated, async (req, res) => {
   return res.status(httpStatusCodes.OK).render("user/profile", req.user);
+});
+
+router.get("/profile", (req, res) => {
+  return res.status(httpStatusCodes.OK).redirect("/user");
 });
 
 router.get("/login", auth.notAuthenticated, (req, res) => {
@@ -85,14 +89,10 @@ router.post("/register", async (req, res) => {
         .status(httpStatusCodes.BadRequest)
         .render("user/register", req.body);
     }
-  } catch (err) {
-    console.log(err);
-  }
-  bcrypt.hash(password, 10, async (err, hash) => {
-    if (err) {
-      console.log(err);
-    }
-    try {
+    bcrypt.hash(password, 10, async (err, hash) => {
+      if (err) {
+        console.log(err);
+      }
       const user = await User.create({
         first_name,
         last_name,
@@ -101,10 +101,10 @@ router.post("/register", async (req, res) => {
       });
       req.flash("success", "account has been created");
       return res.status(httpStatusCodes.Created).redirect("/user/login");
-    } catch (err) {
-      console.log(err);
-    }
-  });
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.post(

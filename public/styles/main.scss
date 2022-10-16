@@ -94,8 +94,7 @@ body {
   }
 }
 .main {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,6 +105,122 @@ body {
       text-align: center;
       &::first-letter {
         text-transform: uppercase;
+      }
+    }
+  }
+  .posts-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .post {
+      width: 500px;
+      height: 550px;
+      margin: 2em;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      .post-image-link {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        height: 60%;
+        transition: filter 0.5s ease;
+        &:hover {
+          filter: brightness(70%);
+        }
+        .post-image {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .post-description-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+        padding: 1em;
+        .post-author-date-wrapper {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          h5 {
+          }
+        }
+        .post-title {
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          text-align: center;
+          .post-description-link {
+            text-decoration: none;
+            color: #000000;
+            text-transform: uppercase;
+          }
+        }
+        .post-description {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .post-read-more-link {
+          align-self: flex-end;
+          margin-top: 0.5em;
+          width: fit-content;
+          text-decoration: none;
+          border: 2px solid #000000;
+          color: #000000;
+          padding: 0.5em;
+          border-radius: 5px;
+          font-size: 0.9em;
+          text-transform: uppercase;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            color: #1363df;
+            border-color: #1363df;
+          }
+        }
+      }
+    }
+  }
+  .form-page {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    .form-page-input {
+      font-size: 1.1em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      outline: none;
+      width: 2em;
+      height: 2em;
+      text-align: center;
+    }
+    .form-page-num {
+      font-weight: bold;
+    }
+    .form-page-button-backward {
+      user-select: none;
+      font-size: 1.1em;
+      border: none;
+      background-color: #1363df;
+      color: #ffffff;
+      width: 2em;
+      height: 2em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .form-page-button-forward {
+      user-select: none;
+      font-size: 1.1em;
+      border: none;
+      background-color: #1363df;
+      color: #ffffff;
+      margin-left: 0.5em;
+      width: 2em;
+      height: 2em;
+      &:hover {
+        cursor: pointer;
       }
     }
   }

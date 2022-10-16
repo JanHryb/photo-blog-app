@@ -33,6 +33,7 @@ app.use(require("./middleware/urlCorrect"));
 //routing
 app.use("/", require("./routes/home"));
 app.use("/user", require("./routes/user"));
+app.use("/post", require("./routes/post"));
 
 app.get("*", (req, res) => {
   return res.status(httpStatusCodes.NotFound).render("notFound");
