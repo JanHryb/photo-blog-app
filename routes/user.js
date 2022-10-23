@@ -6,9 +6,19 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const passport = require("passport");
 const auth = require("../config/auth");
+const Post = require("../models/Post");
 
 router.get("/", auth.authenticated, async (req, res) => {
-  return res.status(httpStatusCodes.OK).render("user/profile", req.user);
+  const user = req.user;
+  try {
+    let posts = await Post.find({ user_id: user._id }).sort({ createdAt: -1 });
+    posts = posts.length > 0 ? posts : undefined;
+    return res
+      .status(httpStatusCodes.OK)
+      .render("user/profile", { user, posts });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get("/profile", (req, res) => {

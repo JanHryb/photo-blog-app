@@ -2,7 +2,9 @@ DONE: make navbar
 DONE: config mongo DB
 DONE: login, register logic -> passport local strategy
 DONE: deploy app -> https://railway.app/dashboard
-TODO: post schema(mongoose) -> column ideas: edited(boolean), datecreated, userid(mongodbId), imageURL, title, description
-TODO: adding post logic, displaying, deleting, editing
-TODO: uploading images -> multer and cloud storage(for example: google storage api)
-TODO: create prettier footer
+DONE: post schema(mongoose) -> column ideas: edited(boolean), datecreated, userid(mongodbId), imageURL, title, description
+DONE: displaying post
+DONE: deleting post
+DONE: adding post
+IN THE FUTURE: uploading images -> multer and cloud storage(for example: google storage api)
+DONE: editing post

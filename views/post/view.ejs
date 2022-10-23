@@ -2,15 +2,26 @@
 <html lang="en">
   <head>
     <%- include('../partials/headConfig') %>
-    <title>Blog · post</title>
+    <link rel="stylesheet" href="/styles/post.css" />
+    <title>Blog · <%= post.title %></title>
   </head>
   <body>
    <div class="container">
     <%- include('../partials/navbar') %>
     <main class="main">
       <header class="header-wrapper">
-        <h1 class="header"></h1>
+        <h1 class="header"><%= post.title %></h1>
       </header>
+      <article class="post">
+        <h5 class="post-header"><%= post.user_id.first_name %> <%= post.user_id.last_name %> | <%= post.createdAt.toLocaleDateString() %></h5>
+        <hr class="post-horizontal-line">
+        <section class="post-image-wrapper">
+          <img src="<%= post.image_url %>" alt="<%= post.title %>" class="post-image">
+        </section>
+        <section class="post-description-wrapper">
+          <p class="post-description"><%= post.description  %></p>
+        </section>
+      </article>
     </main>
    </div>
    <%- include('../partials/footer') %>

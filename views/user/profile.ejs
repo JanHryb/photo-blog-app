@@ -2,18 +2,54 @@
 <html lang="en">
   <head>
     <%- include('../partials/headConfig') %>
+    <link rel="stylesheet" href="/styles/profile.css" />
     <title>Blog · profile</title>
   </head>
   <body>
    <div class="container">
     <%- include('../partials/navbar') %>
     <main class="main">
+      <% if (messages.success) { %>
+        <div class="form-items-wrapper">
+          <p class="message-success-profile"><%= messages.success %></p>
+        </div>
+      <% } %>
       <header class="header-wrapper">
-        <h1 class="header">Hi, <%= first_name %></h1>
+        <h1 class="header">Hi <%= user.first_name %>, welcome to your posts dashboard</h1>
       </header>
+      <div class="content-wrapper">
+        <section class="posts-profile-wrapper">
+        <% if(posts){%>
+          <h2><span>Your current posts</span></h2>
+          <% posts.forEach((post, index)=>{%>
+          <article class="post">
+            <div class="header-date-wrapper">
+              <h4 class="post-header"><a href="/post/view/<%= post._id.toString() %>"><%= post.title %></a></h4>
+              <p class="post-date"><%= post.createdAt.toLocaleDateString() %></p>
+            </div>
+            <p class="post-desc"><%= post.description %></p>
+            <div class="link-icons-wrapper">
+              <a href="post/update/<%= post._id.toString() %>">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </a>
+              <button data-id="<%= post._id.toString() %>" id="button-<%= index + 1  %>" onclick="deletePost(this.id)">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+           </article>
+           <% }) %> 
+        <% }else{ %>
+          <h2>You don't have any posts yet</h2>
+        <% } %> 
+        </section>
+        <section class="create-post-wrapper">
+          <a href="/post/add">Add new post</a>
+        </section>
+      </div>
     </main>
    </div>
    <%- include('../partials/footer') %>
    <%- include('../partials/scriptConfig') %>
+   <script src="/scripts/deletePost.js"></script>
   </body>
 </html>

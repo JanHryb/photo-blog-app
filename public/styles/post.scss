@@ -1,0 +1,42 @@
+.header {
+  text-transform: uppercase;
+}
+.post {
+  margin-top: 1em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
+  grid-template-rows: auto;
+  gap: 1.5em 1.5em;
+  grid-template-areas:
+    ". header header ."
+    ". hr hr ."
+    ". image desc .";
+  .post-header {
+    grid-area: header;
+    text-align: center;
+  }
+  .post-horizontal-line {
+    grid-area: hr;
+    border: none;
+    height: 0px;
+    box-shadow: 0 1px 4px 1px #1363df;
+  }
+  .post-image-wrapper {
+    padding-left: 1.5em;
+    grid-area: image;
+    display: flex;
+    justify-content: right;
+    .post-image {
+      border-radius: 5px;
+      object-fit: cover;
+    }
+  }
+  .post-description-wrapper {
+    padding-right: 1.5em;
+    text-align: justify;
+    grid-area: desc;
+    .post-description {
+    }
+  }
+}

@@ -1,0 +1,102 @@
+.content-wrapper {
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.content-wrapper .posts-profile-wrapper {
+  width: 45%;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.content-wrapper .posts-profile-wrapper h2 {
+  font-size: 0.9em;
+  text-align: center;
+}
+.content-wrapper .posts-profile-wrapper h2 span {
+  display: inline;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 5px 10px;
+  position: relative;
+  top: -0.8em;
+}
+.content-wrapper .posts-profile-wrapper .post {
+  padding: 1em;
+  border-bottom: 2px solid #000000;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr;
+  grid-template-rows: auto;
+  grid-template-areas: "title icons" "desc icons";
+}
+.content-wrapper .posts-profile-wrapper .post:last-child {
+  border: none;
+}
+.content-wrapper .posts-profile-wrapper .post .header-date-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  grid-area: title;
+}
+.content-wrapper .posts-profile-wrapper .post .header-date-wrapper .post-header {
+  margin-right: 1em;
+}
+.content-wrapper .posts-profile-wrapper .post .header-date-wrapper .post-header a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+}
+.content-wrapper .posts-profile-wrapper .post .post-desc {
+  grid-area: desc;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+}
+.content-wrapper .posts-profile-wrapper .post .link-icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: icons;
+}
+.content-wrapper .posts-profile-wrapper .post .link-icons-wrapper a {
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: 0.5em;
+}
+.content-wrapper .posts-profile-wrapper .post .link-icons-wrapper button {
+  font-size: 1em;
+  border: none;
+}
+.content-wrapper .posts-profile-wrapper .post .link-icons-wrapper button:hover {
+  cursor: pointer;
+}
+.content-wrapper .posts-profile-wrapper .post .link-icons-wrapper button i {
+  color: #000000;
+}
+.content-wrapper .create-post-wrapper {
+  width: 45%;
+  padding: 1em;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  grid-area: create;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-wrapper .create-post-wrapper a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #1363df;
+  border-radius: 5px;
+  font-size: 1.05em;
+  padding: 1.5em;
+}/*# sourceMappingURL=profile.css.map */

@@ -153,6 +153,10 @@ body {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .main .posts-wrapper .post .post-description-wrapper .post-title .post-description-link {
   text-decoration: none;
@@ -242,6 +246,14 @@ body {
 .message-success {
   color: #22be22;
   font-size: 0.9em;
+}
+
+.message-success-profile {
+  color: #22be22;
+  font-size: 1em;
+}
+.message-success-profile::first-letter {
+  text-transform: capitalize;
 }
 
 .footer {

@@ -3,15 +3,15 @@
   <head>
     <%- include('../partials/headConfig') %>
     <link rel="stylesheet" href="/styles/form.css" />
-    <title>Blog · add new post</title>
+    <title>Blog · update</title>
   </head>
   <body>
    <div class="container">
     <%- include('../partials/navbar') %>
     <main class="main">
-      <form action="/post/add" method="post" class="form">
+      <form action="/post/update/<%= post._id.toString()  %>" method="post" class="form">
         <header class="header-wrapper">
-          <h2 class="header">add new post</h2>
+          <h2 class="header">update post</h2>
         </header>
         <% if (messages.error) { %>
         <div class="form-items-wrapper">
@@ -20,18 +20,18 @@
         <% } %>
         <div class="form-items-wrapper">
           <label for="title" class="form-label">title</label>
-          <input type="text" name="title" id="title" class="form-input" value="<%= typeof title != 'undefined' ? title : '' %>" required>
+          <input type="text" name="title" id="title" class="form-input" value="<%= post.title  %>" required>
         </div>
         <div class="form-items-wrapper">
           <label for="description" class="form-label">description</label>
-          <textarea name="description" id="description" cols="30" rows="10" class="form-textarea" required><%= typeof description != 'undefined' ? description : '' %></textarea>
+          <textarea name="description" id="description" cols="30" rows="10" class="form-textarea" required><%= post.description  %></textarea>
         </div>
         <div class="form-items-wrapper">
           <label for="imageUrl" class="form-label">image URL</label>
-          <input type="text" name="imageUrl" id="imageUrl" class="form-input" value="<%= typeof imageUrl != 'undefined' ? imageUrl : '' %>" required>
+          <input type="text" name="imageUrl" id="imageUrl" class="form-input" value="<%= post.image_url  %>" required>
         </div>
         <div class="form-items-wrapper">
-          <button type="submit" class="form-button">Create post</button>
+          <button type="submit" class="form-button">Update</button>
         </div>
       </form>
     </main>
