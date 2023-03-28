@@ -7,4 +7,4 @@ DONE: displaying post
 DONE: deleting post
 DONE: adding post
 IN THE FUTURE: uploading images -> multer and cloud storage(for example: google storage api)
-DONE: editing post
+DONE: editing post 
